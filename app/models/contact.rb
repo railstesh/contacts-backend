@@ -10,7 +10,7 @@ class Contact < ApplicationRecord
   def create_edit_history
     # Only create a new EditVersion record if any of the contact's attributes have changed.
     if changes_to_save.any?
-      edit_versions.create(change_set: changes_to_save)
+      edit_versions.create(change_set: changes_to_save.except(:updated_at))
     end
   end
 end

@@ -7,6 +7,11 @@ class ContactsController < ApplicationController
     render json: {contacts: @contacts}
   end
 
+  # GET /contact/:id
+  def show
+    render json: {contact: @contact}
+  end
+
   # POST /contacts or /contacts.json
   def create
     @contact = Contact.new(contact_params)
