@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   # GET /contacts or /contacts.json
   def index
     @contacts = Contact.all
-    render json: @contacts
+    render json: {contacts: @contacts}
   end
 
   # POST /contacts or /contacts.json

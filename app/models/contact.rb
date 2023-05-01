@@ -3,7 +3,7 @@ class Contact < ApplicationRecord
   validates :email, uniqueness: true
   has_many :edit_versions, dependent: :destroy
 
-  before_save :create_edit_history
+  before_update :create_edit_history
 
   private
 
